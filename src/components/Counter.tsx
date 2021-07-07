@@ -1,10 +1,11 @@
 import React from "react";
 
 interface Props {
-  count: number;
+  count?: number;
   onIncrement: () => void;
   onDecrement: () => void;
   onIncreaseBy: (diff: number) => void;
+  onIncrementAsync: (count: number) => void;
 }
 
 const Counter: React.FC<Props> = ({
@@ -12,6 +13,7 @@ const Counter: React.FC<Props> = ({
   onIncrement,
   onDecrement,
   onIncreaseBy,
+  onIncrementAsync,
 }) => {
   return (
     <div>
@@ -19,6 +21,7 @@ const Counter: React.FC<Props> = ({
       <button onClick={onIncrement}>+1</button>
       <button onClick={onDecrement}>-1</button>
       <button onClick={() => onIncreaseBy(5)}>+5</button>
+      <button onClick={() => onIncrementAsync(count)}>Add Async</button>
     </div>
   );
 };

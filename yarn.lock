@@ -5703,6 +5703,11 @@ immer@^9.0.1:
   resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.4.tgz#eafd471bbf64503bc3e9e746aef22887b753d634"
   integrity sha512-zgDMuqedAZswaKN3iFm/9CfhDz7hRdhvte7Ql9EuU/yMStnZJkQMtpCxNTfW9pw0UmxhECMmm2edrqZHwAHHNA==
 
+immer@^9.0.5:
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.5.tgz#a7154f34fe7064f15f00554cc94c66cc0bf453ec"
+  integrity sha512-2WuIehr2y4lmYz9gaQzetPR2ECniCifk4ORaQbU3g5EalLt+0IVTosEPJ5BoYl/75ky2mivzdRzV8wWgQGOSYQ==
+
 import-cwd@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-2.1.0.tgz#aa6cf36e722761285cb371ec6519f53e2435b0a9"
