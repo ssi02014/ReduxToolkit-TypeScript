@@ -36,11 +36,10 @@ export const counterSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
+        console.log(state.status);
         state.status = "loading";
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        console.log(state);
-        console.log(action);
         state.status = "idle";
         state.value += action.payload;
       });
