@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "list": [
+    {
+      "content": "리액트 공부하기",
+      "id": 1
+    },
+    {
+      "content": "리덕스 공부하기",
+      "id": 2
+    },
+    {
+      "content": "회사 다니기",
+      "id": 3
+    }
+  ]
+}

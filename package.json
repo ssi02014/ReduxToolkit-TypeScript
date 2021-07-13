@@ -12,6 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.16",
+    "axios": "^0.21.1",
     "immer": "^9.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -46,5 +47,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

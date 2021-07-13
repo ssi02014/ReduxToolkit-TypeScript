@@ -1,11 +1,12 @@
 import React from "react";
 import CounterContainer from "./containers/CounterCotainer";
-import "./App.css";
+import Todo from "./containers/Todo";
 
 function App() {
   return (
     <div className="App">
       <CounterContainer />
+      <Todo />
     </div>
   );
 }
