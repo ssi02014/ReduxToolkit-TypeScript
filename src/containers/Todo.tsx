@@ -25,7 +25,7 @@ const Todo: React.FC<Props> = () => {
       />
       <button type="submit">추가</button>
       <ul>
-        {todoList.map((list) => (
+        {todoList.todos.map((list) => (
           <TodoList
             key={list.id}
             userId={list.userId}

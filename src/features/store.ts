@@ -5,13 +5,21 @@ import {
   Action,
 } from "@reduxjs/toolkit";
 import reducer from "./rootReducer";
+import storage from "redux-persist/lib/storage/session";
+import { persistReducer } from "redux-persist";
 
 const { logger } = require("redux-logger");
 
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
 const middleware = [...getDefaultMiddleware(), logger];
 
+const persistedReducer = persistReducer(persistConfig, reducer);
 const store = configureStore({
-  reducer,
+  reducer: persistedReducer,
   middleware,
 });
 

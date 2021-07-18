@@ -8,6 +8,11 @@ interface todoProps {
   body: string;
 }
 
+interface InititStateProps {
+  todos: todoProps[];
+  isLoading: boolean;
+}
+
 export const getList: any = createAsyncThunk("GET_TODO", async () => {
   const response = await axios.get(
     "https://jsonplaceholder.typicode.com/posts"
@@ -16,16 +21,45 @@ export const getList: any = createAsyncThunk("GET_TODO", async () => {
   return response.data;
 });
 
-const initialState: todoProps[] = [];
+const initialState: InititStateProps = {
+  todos: [],
+  isLoading: false,
+};
+
+// const todoReducer = createSlice({
+//   name: "todoList",
+//   initialState,
+//   reducers: {},
+//   extraReducers: {
+//     [getList.pending]: (state, { payload }) => {
+//       state.isLoading = true;
+//     },
+//     [getList.fulfilled]: (state, { payload }) => {
+//       state.isLoading = false;
+//       state.todos = [...payload];
+//     },
+//     [getList.rejected]: (state, { payload }) => {
+//       state.isLoading = false;
+//     },
+//   },
+// });
 
 const todoReducer = createSlice({
   name: "todoList",
   initialState,
   reducers: {},
-  extraReducers: {
-    [getList.fulfilled]: (state, { payload }) => [...payload],
-    // [getList.rejected]: (state, { payload }) => ["sibal"],
-  },
+  extraReducers: (builder) =>
+    builder
+      .addCase(getList.pending, (state, { payload }) => {
+        state.isLoading = true;
+      })
+      .addCase(getList.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.todos = [...payload];
+      })
+      .addCase(getList.rejected, (state, { payload }) => {
+        state.isLoading = false;
+      }),
 });
 
 export default todoReducer.reducer;
