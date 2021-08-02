@@ -166,6 +166,8 @@ const { logger } = require("redux-logger");
 const persistConfig = {
   key: "root",
   storage,
+  // whitelist: [] 배열안에 들어가있는 리듀서만 저장
+  // blacklist: [] 배열안에 들어가있는 리듀서만 제외한다.
 };
 
 const middleware = [...getDefaultMiddleware(), logger];
